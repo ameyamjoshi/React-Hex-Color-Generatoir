@@ -1,1 +1,1 @@
-# React-Hex-Color-Generatoir
+# React-Hex-Color-Generator
