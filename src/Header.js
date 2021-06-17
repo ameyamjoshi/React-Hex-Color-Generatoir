@@ -3,7 +3,8 @@ import "./Header.css";
 
 function Header() {
   const [hex, generatehex] = useState([]);
-  const [button1, setbutton1] = useState("Generate");
+  const [button1, setbutton1] = useState("Generate Colors");
+  const [button2, setbutton2] = useState("Generate Gradients");
   const clickhandler = () => {
     console.log("clicked");
     var arr = [];
@@ -17,12 +18,20 @@ function Header() {
     generatehex(arr);
     setbutton1("New Colors");
   };
+  const clickhandlergradient = () => {
+    console.log("clicked");
+    setbutton2("New Gradients");
+    generatehex("");
+  };
   return (
     <div className="header__container">
       Pick Awesome colors for your designs
       <br></br>
       <button className="generate__button" onClick={clickhandler}>
         {button1}
+      </button>
+      <button className="generate__button" onClick={clickhandlergradient}>
+        {button2}
       </button>
       {hex ? (
         <div className="colors_container">
@@ -38,7 +47,7 @@ function Header() {
           ))}
         </div>
       ) : (
-        <h1>Click the button to see magic</h1>
+        <div>Display Gradients here </div>
       )}
     </div>
   );
