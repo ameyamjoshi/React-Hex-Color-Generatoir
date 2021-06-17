@@ -1,0 +1,83 @@
+.header__container {
+  color: #181818;
+  font-weight: larger;
+  text-align: center;
+  margin: 1em;
+  font-size: 2em;
+  font-weight: larger;
+}
+.generate__button {
+  opacity: 0.8;
+  font-size: 0.5em;
+
+  padding: 1em;
+  margin: 1.5em;
+  background-color: #f1f1f1f1;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  /* transition: background-color 0.2s linear; */
+  /* -ms-transition: background 0.5s linear; Explorer 10 */
+}
+.generate__button:hover {
+  background-color: rgb(196, 46, 196);
+  color: #f1f1f1f1;
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
+.colors_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.display__colors {
+  padding: 2em;
+  margin: 1em;
+  border-radius: 0.2em;
+  /* background-color: aqua; */
+  opacity: 1;
+}
+.display__colors:hover {
+  /* box-shadow: 13px 14px 170px -15px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 13px 14px 170px -15px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 13px 14px 170px -15px rgba(0, 0, 0, 0.55); */
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.color__text {
+  font-weight: lighter;
+  opacity: 0.8;
+}
+.color__text:hover {
+  transition: all 0.2s ease-in;
+  font-weight: bolder;
+  /* cursor: text !important; */
+  opacity: 1 !important;
+}
+@media only screen and (max-width: 600px) {
+  .header__container {
+    font-size: 1.25em;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(196, 46, 196);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b3008c;
+}
