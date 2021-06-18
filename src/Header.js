@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Header.css";
+import ColorResults from "./ColorResults";
+import Gradients from "./Gradients";
 
 function Header() {
   const [hex, generatehex] = useState([]);
   const [button1, setbutton1] = useState("Generate Colors");
   const [button2, setbutton2] = useState("Generate Gradients");
+  const [buttonClicked, setButtonClicked] = useState(0);
   const clickhandler = () => {
     console.log("clicked");
     var arr = [];
@@ -17,11 +20,13 @@ function Header() {
     }
     generatehex(arr);
     setbutton1("New Colors");
+    setButtonClicked(0);
   };
   const clickhandlergradient = () => {
     console.log("clicked");
     setbutton2("New Gradients");
     generatehex("");
+    setButtonClicked(1);
   };
   return (
     <div className="header__container">
@@ -34,20 +39,9 @@ function Header() {
         {button2}
       </button>
       {hex ? (
-        <div className="colors_container">
-          {hex.map((hex) => (
-            <div
-              className="display__colors"
-              style={{
-                backgroundColor: `${hex}`,
-              }}
-            >
-              <div className="color__text">{hex}</div>
-            </div>
-          ))}
-        </div>
+        <ColorResults hex={hex} />
       ) : (
-        <div>Display Gradients here </div>
+        <Gradients buttonClicked={buttonClicked} />
       )}
     </div>
   );
